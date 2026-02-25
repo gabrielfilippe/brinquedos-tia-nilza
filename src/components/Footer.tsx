@@ -1,7 +1,9 @@
 import { MessageCircle, Instagram, Heart } from "lucide-react";
+import { getYearsSinceStart } from "@/lib/utils";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const yearsSinceStart = getYearsSinceStart();
 
   return (
     <footer className="bg-foreground text-primary-foreground">
@@ -15,7 +17,7 @@ const Footer = () => {
                 Brinquedos da <span className="text-accent">Tia Nilza</span>
               </h3>
               <p className="text-primary-foreground/60 text-sm">
-                Há 19 anos levando alegria e diversão para festas infantis.
+                Há {yearsSinceStart} anos levando alegria e diversão para festas infantis.
               </p>
             </div>
 
@@ -50,7 +52,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex justify-end gap-4">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5535998119836"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-primary-foreground/10 rounded-full hover:bg-green transition-colors"

@@ -64,7 +64,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5535998119836"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-green text-primary-foreground font-medium rounded-full hover:scale-105 transition-transform duration-300"
@@ -111,7 +111,7 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5535998119836"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-green text-primary-foreground font-medium rounded-xl mt-2"

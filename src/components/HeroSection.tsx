@@ -1,7 +1,9 @@
 import { MessageCircle, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-kids-party.jpg";
+import { getYearsSinceStart } from "@/lib/utils";
 
 const HeroSection = () => {
+  const yearsSinceStart = getYearsSinceStart();
   const scrollToToys = () => {
     document.getElementById("brinquedos")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -30,7 +32,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full mb-6 animate-fade-in">
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             <span className="text-sm font-medium text-accent">
-              19 anos de diversão garantida
+              {yearsSinceStart} anos de diversão garantida
             </span>
           </div>
 
@@ -42,7 +44,7 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-3 animate-fade-in animate-delay-200 font-medium">
-            Há 19 anos levando alegria e diversão para festas infantis
+            Há {yearsSinceStart} anos levando alegria e diversão para festas infantis
           </p>
 
           {/* Supporting Text */}
@@ -53,7 +55,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-400">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5535998119836"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green text-primary-foreground font-semibold rounded-2xl hover:scale-105 transition-all duration-300 glow-green animate-pulse-glow"

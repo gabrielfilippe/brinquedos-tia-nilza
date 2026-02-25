@@ -1,11 +1,15 @@
 import { Shield, Sparkles, Clock, Heart, Users } from "lucide-react";
+import { getYearsSinceStart } from "@/lib/utils";
 
-const features = [
-  {
-    icon: Clock,
-    text: "19 anos de experiência",
-    color: "bg-primary/10 text-primary",
-  },
+const AboutSection = () => {
+  const yearsSinceStart = getYearsSinceStart();
+  
+  const features = [
+    {
+      icon: Clock,
+      text: `${yearsSinceStart} anos de experiência`,
+      color: "bg-primary/10 text-primary",
+    },
   {
     icon: Sparkles,
     text: "Brinquedos higienizados",
@@ -28,7 +32,6 @@ const features = [
   },
 ];
 
-const AboutSection = () => {
   return (
     <section id="sobre" className="section-padding bg-muted/50">
       <div className="container-custom">
@@ -44,7 +47,7 @@ const AboutSection = () => {
               <span className="text-secondary">segurança</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              A <strong className="text-foreground">Brinquedos da Tia Nilza</strong> atua há 19 anos 
+              A <strong className="text-foreground">Brinquedos da Tia Nilza</strong> atua há {yearsSinceStart} anos 
               no mercado, levando diversão, segurança e tranquilidade para pais e responsáveis. 
               Nosso compromisso é garantir momentos inesquecíveis para as crianças, com brinquedos 
               seguros, higienizados e montagem profissional.
@@ -72,7 +75,7 @@ const AboutSection = () => {
           {/* Stats Cards */}
           <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
             <div className="bg-primary rounded-3xl p-6 text-primary-foreground shadow-lg">
-              <span className="text-5xl font-bold">19</span>
+              <span className="text-5xl font-bold">{yearsSinceStart}</span>
               <p className="text-primary-foreground/80 mt-2">Anos de experiência</p>
             </div>
             <div className="bg-secondary rounded-3xl p-6 text-secondary-foreground shadow-lg">

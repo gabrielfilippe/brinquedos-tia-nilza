@@ -1,6 +1,9 @@
 import { MessageCircle, PartyPopper } from "lucide-react";
+import { getYearsSinceStart } from "@/lib/utils";
 
 const CTASection = () => {
+  const yearsSinceStart = getYearsSinceStart();
+  
   return (
     <section className="section-padding bg-gradient-to-r from-primary via-secondary to-primary relative overflow-hidden">
       {/* Decorative Elements */}
@@ -24,12 +27,12 @@ const CTASection = () => {
 
           {/* Subtitle */}
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Com quem entende do assunto há 19 anos. Faça seu orçamento agora mesmo, sem compromisso!
+            Com quem entende do assunto há {yearsSinceStart} anos. Faça seu orçamento agora mesmo, sem compromisso!
           </p>
 
           {/* CTA Button */}
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5535998119836"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-green text-primary-foreground font-bold text-lg rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg glow-green animate-pulse-glow"

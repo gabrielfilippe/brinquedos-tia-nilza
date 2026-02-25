@@ -1,7 +1,7 @@
 import { Star, MessageCircle } from "lucide-react";
 import trampolineImg from "@/assets/trampoline.jpg";
 import slideImg from "@/assets/slide.jpg";
-import ballPitImg from "@/assets/ball-pit.jpg";
+import ballPitImg from "@/assets/piscinaDeBolinhas.jpeg";
 import bouncyCastleImg from "@/assets/bouncy-castle.jpg";
 
 const toys = [
@@ -103,7 +103,7 @@ const ToysSection = () => {
                   {toy.description}
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5535998119836"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full py-3 bg-green text-primary-foreground font-medium rounded-xl hover:scale-[1.02] transition-transform duration-300"
