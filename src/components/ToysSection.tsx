@@ -1,14 +1,14 @@
 import { Star, MessageCircle } from "lucide-react";
-import trampolineImg from "@/assets/trampoline.jpg";
-import slideImg from "@/assets/slide.jpg";
-import ballPitImg from "@/assets/ball-pit.jpg";
-import bouncyCastleImg from "@/assets/bouncy-castle.jpg";
+import trampolineImg from "@/assets/camaelastica.jpg";
+import slideImg from "@/assets/tobogaslide.jpeg";
+import ballPitImg from "@/assets/piscinaDeBolinhas.jpeg";
+import bouncyCastleImg from "@/assets/castelinho.jpg";
 
 const toys = [
   {
     id: 1,
     name: "Cama Elástica",
-    description: "Perfeita para pular e gastar energia! Disponível em 2 unidades para atender mais crianças.",
+    description: "Perfeita para pular e gastar energia!",
     image: trampolineImg,
     quantity: 2,
     popular: true,
@@ -18,7 +18,7 @@ const toys = [
   {
     id: 2,
     name: "Tobogã Inflável",
-    description: "Muita diversão descendo e subindo! Sucesso garantido em qualquer festa.",
+    description: "Muita diversão! Sucesso garantido em qualquer festa.",
     image: slideImg,
     quantity: 2,
     popular: true,
@@ -28,7 +28,7 @@ const toys = [
   {
     id: 3,
     name: "Piscina de Bolinhas",
-    description: "Colorida e super divertida! As crianças adoram mergulhar nas bolinhas.",
+    description: "Colorida e super divertida! As crianças adoram.",
     image: ballPitImg,
     quantity: 1,
     popular: false,
@@ -38,7 +38,7 @@ const toys = [
   {
     id: 4,
     name: "Castelinho Inflável",
-    description: "Um castelo de sonhos para as crianças pularem e brincarem à vontade!",
+    description: "Um castelo de sonhos para as crianças brincarem à vontade!",
     image: bouncyCastleImg,
     quantity: 1,
     popular: false,
@@ -103,7 +103,7 @@ const ToysSection = () => {
                   {toy.description}
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5535998119836"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full py-3 bg-green text-primary-foreground font-medium rounded-xl hover:scale-[1.02] transition-transform duration-300"

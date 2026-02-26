@@ -21,7 +21,7 @@ const ContactSection = () => {
             {/* Contact Cards */}
             <div className="space-y-4">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5535998119836"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 group"
@@ -31,7 +31,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">WhatsApp</p>
-                  <p className="text-muted-foreground">(11) 99999-9999</p>
+                  <p className="text-muted-foreground">(35) 99811-9836</p>
                 </div>
               </a>
 
@@ -56,7 +56,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Área de Atendimento</p>
-                  <p className="text-muted-foreground">São Paulo e região</p>
+                  <p className="text-muted-foreground">Cabo Verde - MG e região</p>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@ const ContactSection = () => {
                   Resposta em até 1 hora pelo WhatsApp
                 </p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5535998119836"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full py-4 bg-green text-primary-foreground font-semibold rounded-xl hover:scale-[1.02] transition-transform duration-300"
