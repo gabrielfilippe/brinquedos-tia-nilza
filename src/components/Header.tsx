@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const navItems = [
   { label: "Início", href: "#" },
@@ -35,13 +36,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span
-              className={`text-xl md:text-2xl font-bold transition-colors ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
-            >
-              Tia <span className="text-accent">Nilza</span>
-            </span>
+            <img 
+              src={logo} 
+              alt="Logo Brinquedos da Tia Nilza" 
+              className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain bg-white/90 p-1"
+            />
           </a>
 
           {/* Desktop Navigation */}

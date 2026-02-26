@@ -43,7 +43,7 @@ const AboutSection = () => {
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Tradição em{" "}
-              <span className="text-primary">diversão</span> e{" "}
+              <span className="text-green">diversão</span> e{" "}
               <span className="text-secondary">segurança</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -79,17 +79,17 @@ const AboutSection = () => {
               <p className="text-primary-foreground/80 mt-2">Anos de experiência</p>
             </div>
             <div className="bg-secondary rounded-3xl p-6 text-secondary-foreground shadow-lg">
-              <span className="text-5xl font-bold">+500</span>
-              <p className="text-secondary-foreground/80 mt-2">Festas realizadas</p>
+              <span className="text-5xl font-bold">6</span>
+              <p className="text-secondary-foreground/80 mt-2">Brinquedos disponíveis</p>
             </div>
-            <div className="bg-accent rounded-3xl p-6 text-accent-foreground shadow-lg">
-              <span className="text-5xl font-bold">100%</span>
-              <p className="text-accent-foreground/80 mt-2">Clientes satisfeitos</p>
+            {/* <div className="bg-accent rounded-3xl p-6 text-accent-foreground shadow-lg">
+              <span className="text-5xl font-bold">Toda</span>
+              <p className="text-accent-foreground/80 mt-2">Região atendida</p>
             </div>
             <div className="bg-green rounded-3xl p-6 text-primary-foreground shadow-lg">
-              <span className="text-5xl font-bold">6</span>
-              <p className="text-primary-foreground/80 mt-2">Brinquedos disponíveis</p>
-            </div>
+              <span className="text-5xl font-bold">100%</span>
+              <p className="text-primary-foreground/80 mt-2">Clientes satisfeitos</p>
+            </div> */}
           </div>
         </div>
       </div>

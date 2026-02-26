@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
+import gallery1 from "@/assets/jose_toboga.jpg";
+import gallery2 from "@/assets/moana_camaElastica.jpg";
+import gallery3 from "@/assets/criancas_na_camaElastica.jpg";
+import gallery4 from "@/assets/duas_criancas_camaElastica.jpg";
+import gallery5 from "@/assets/alice_piscinaDeBolinhas.jpeg";
+import gallery6 from "@/assets/noah_piscinaBolinhas.jpeg";
 
 const images = [
-  { src: gallery1, alt: "Crianças pulando no castelo inflável" },
-  { src: gallery2, alt: "Crianças descendo o tobogã" },
-  { src: gallery3, alt: "Diversão na piscina de bolinhas" },
+  { src: gallery1, alt: "Criança se divertindo no tobogã" },
+  { src: gallery2, alt: "Criança se divertindo na cama elástica" },
+  { src: gallery3, alt: "Diversão na cama elástica" },
   { src: gallery4, alt: "Crianças na cama elástica" },
-  { src: gallery5, alt: "Festa com brinquedos infláveis" },
-  { src: gallery6, alt: "Crianças brincando no castelo" },
+  { src: gallery5, alt: "Criança brincando na piscina de bolinhas" },
+  { src: gallery6, alt: "Crianças se divertindo na piscina de bolinhas" },
 ];
 
 const GallerySection = () => {

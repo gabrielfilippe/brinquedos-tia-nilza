@@ -1,5 +1,5 @@
 import { MessageCircle, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-kids-party.jpg";
+import heroImage from "@/assets/todosBrinquedos.jpg";
 import { getYearsSinceStart } from "@/lib/utils";
 
 const HeroSection = () => {

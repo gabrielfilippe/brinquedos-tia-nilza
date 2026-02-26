@@ -1,4 +1,5 @@
 import { MessageCircle, Instagram, Heart } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 import { getYearsSinceStart } from "@/lib/utils";
 
 const Footer = () => {
@@ -12,10 +13,13 @@ const Footer = () => {
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {/* Logo & Description */}
-            <div>
-              <h3 className="text-2xl font-bold mb-2">
-                Brinquedos da <span className="text-accent">Tia Nilza</span>
-              </h3>
+            <div className="flex flex-col items-start">
+              <div className="flex items-center gap-3 mb-3">
+                <img src={logo} alt="Logo Brinquedos da Tia Nilza" className="w-12 h-12 rounded-lg object-contain bg-white/90 p-1" />
+                <h3 className="text-2xl font-bold">
+                  Brinquedos da <span className="text-accent">Tia Nilza</span>
+                </h3>
+              </div>
               <p className="text-primary-foreground/60 text-sm">
                 Há {yearsSinceStart} anos levando alegria e diversão para festas infantis.
               </p>
@@ -77,12 +81,9 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-primary-foreground/10 py-6">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-primary-foreground/60">
             <p>
               © {currentYear} Brinquedos da Tia Nilza — Todos os direitos reservados
-            </p>
-            <p className="flex items-center gap-1">
-              Feito com <Heart className="w-4 h-4 text-primary fill-primary" /> para crianças felizes
             </p>
           </div>
         </div>

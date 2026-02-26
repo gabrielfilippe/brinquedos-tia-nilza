@@ -56,7 +56,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Área de Atendimento</p>
-                  <p className="text-muted-foreground">São Paulo e região</p>
+                  <p className="text-muted-foreground">Cabo Verde - MG e região</p>
                 </div>
               </div>
 
