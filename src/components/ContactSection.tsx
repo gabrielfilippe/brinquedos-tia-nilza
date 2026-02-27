@@ -11,7 +11,7 @@ const ContactSection = () => {
               Entre em contato
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Fale com a <span className="text-primary">Tia Nilza</span>
+              Fale com a <span className="text-secondary">Tia Nilza</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Entre em contato e faça seu orçamento sem compromisso. Estamos prontos para 
