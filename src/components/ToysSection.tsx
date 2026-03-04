@@ -60,7 +60,8 @@ const ToysSection = () => {
             Nossos <span className="text-primary">Brinquedos</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Confira nossa linha completa de brinquedos para tornar sua festa inesquecível!
+            Confira nossa linha completa de brinquedos para tornar sua festa
+            inesquecível!
           </p>
         </div>
 
@@ -69,7 +70,7 @@ const ToysSection = () => {
           {toys.map((toy, index) => (
             <div
               key={toy.id}
-              className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-2 ${toy.color} animate-fade-in`}
+              className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-2 ${toy.color} animate-fade-in flex flex-col`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Popular Badge */}
@@ -90,9 +91,11 @@ const ToysSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-foreground">{toy.name}</h3>
+                  <h3 className="text-lg font-bold text-foreground">
+                    {toy.name}
+                  </h3>
                   {toy.quantity > 1 && (
                     <span className="text-xs font-medium px-2 py-1 bg-muted rounded-full text-muted-foreground">
                       {toy.quantity} unidades
@@ -106,7 +109,7 @@ const ToysSection = () => {
                   href="https://wa.me/5535998119836"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 bg-green text-primary-foreground font-medium rounded-xl hover:scale-[1.02] transition-transform duration-300"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 bg-green text-primary-foreground font-medium rounded-xl hover:scale-[1.02] transition-transform duration-300 mt-auto"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Solicitar orçamento
@@ -120,7 +123,8 @@ const ToysSection = () => {
         <div className="mt-12 text-center animate-fade-in">
           <p className="text-muted-foreground">
             <Star className="inline w-4 h-4 text-accent mr-1" />
-            <strong className="text-foreground">Dica:</strong> Reserve com antecedência para garantir disponibilidade!
+            <strong className="text-foreground">Dica:</strong> Reserve com
+            antecedência para garantir disponibilidade!
           </p>
         </div>
       </div>
