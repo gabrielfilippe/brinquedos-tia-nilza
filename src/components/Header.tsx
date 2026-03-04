@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logoBrinquedosTiaNilza.jpeg";
 
 const navItems = [
   { label: "Início", href: "#" },

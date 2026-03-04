@@ -1,5 +1,5 @@
 import { MessageCircle, Instagram, Heart } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logoBrinquedosTiaNilza.jpeg";
 import { getYearsSinceStart } from "@/lib/utils";
 
 const Footer = () => {
