@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import gallery1 from "@/assets/jose_toboga.jpg";
 import gallery2 from "@/assets/moana_camaElastica.jpg";
 import gallery3 from "@/assets/criancas_na_camaElastica.jpg";
@@ -8,43 +9,54 @@ import gallery5 from "@/assets/alice_piscinaDeBolinhas.jpeg";
 import gallery6 from "@/assets/noah_piscinaBolinhas.jpeg";
 
 const images = [
-  { src: gallery1, alt: "Criança se divertindo no tobogã" },
-  { src: gallery2, alt: "Criança se divertindo na cama elástica" },
-  { src: gallery3, alt: "Diversão na cama elástica" },
-  { src: gallery4, alt: "Crianças na cama elástica" },
-  { src: gallery5, alt: "Criança brincando na piscina de bolinhas" },
-  { src: gallery6, alt: "Crianças se divertindo na piscina de bolinhas" },
+  { src: gallery1, alt: "" },
+  { src: gallery2, alt: "" },
+  { src: gallery3, alt: "" },
+  { src: gallery4, alt: "" },
+  { src: gallery5, alt: "" },
+  { src: gallery6, alt: "" },
 ];
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
+    threshold: 0.1,
+  });
 
   return (
     <section id="galeria" className="section-padding bg-muted/50">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 scroll-reveal ${headerVisible ? "is-visible" : ""}`}
+        >
           <span className="inline-block px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
             Galeria de fotos
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Momentos de <span className="text-secondary">diversão</span> garantida
+            Momentos de <span className="text-secondary">diversão</span>{" "}
+            garantida
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja como nossos brinquedos fazem a alegria das crianças em cada festa!
+            Veja como nossos brinquedos fazem a alegria das crianças em cada
+            festa!
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(image.src)}
-              className={`group relative overflow-hidden rounded-2xl aspect-square shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-in ${
+              className={`group relative overflow-hidden rounded-2xl aspect-square shadow-card hover:shadow-card-hover transition-all duration-300 scroll-reveal-scale ${gridVisible ? "is-visible" : ""} ${
                 index === 0 || index === 5 ? "md:col-span-1 md:row-span-1" : ""
               }`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{
+                transitionDelay: gridVisible ? `${index * 100}ms` : "0ms",
+              }}
             >
               <img
                 src={image.src}

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -52,9 +52,22 @@
     --green-light: 142 76% 95%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 50% / 0.1) 0%, hsl(355 85% 52% / 0.1) 50%, hsl(45 100% 55% / 0.1) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(142 76% 42%) 0%, hsl(142 76% 35%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(210 100% 50% / 0.1) 0%,
+      hsl(355 85% 52% / 0.1) 50%,
+      hsl(45 100% 55% / 0.1) 100%
+    );
+    --gradient-cta: linear-gradient(
+      135deg,
+      hsl(142 76% 42%) 0%,
+      hsl(142 76% 35%) 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 40% 98%) 100%
+    );
 
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(222 47% 15% / 0.06);
@@ -128,7 +141,12 @@
     @apply bg-background text-foreground font-nunito antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-fredoka font-semibold;
   }
 }
@@ -164,6 +182,48 @@
 }
 
 @layer utilities {
+  /* Scroll Reveal - Initial Hidden State */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .scroll-reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  /* Visible State */
+  .scroll-reveal.is-visible,
+  .scroll-reveal-left.is-visible,
+  .scroll-reveal-right.is-visible,
+  .scroll-reveal-scale.is-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+
   /* Fade In Animation */
   @keyframes fadeIn {
     from {
@@ -210,7 +270,8 @@
   }
 
   @keyframes bounce-gentle {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
@@ -219,7 +280,8 @@
   }
 
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0) rotate(0deg);
     }
     50% {
@@ -228,7 +290,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+    0%,
+    100% {
       box-shadow: 0 0 20px hsl(142 76% 42% / 0.4);
     }
     50% {

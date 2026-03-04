@@ -36,9 +36,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Logo Brinquedos da Tia Nilza" 
+            <img
+              src={logo}
+              alt="Logo Brinquedos da Tia Nilza"
               className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain bg-white/90 p-1"
             />
           </a>
@@ -93,31 +93,18 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-primary-foreground/10 pt-4 animate-fade-in">
-            <div className="flex flex-col gap-2">
+          <nav className="lg:hidden mt-4 pb-4 pt-4 animate-fade-in bg-white rounded-2xl shadow-lg">
+            <div className="flex flex-col gap-2 px-2">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                    isScrolled
-                      ? "text-foreground hover:bg-muted"
-                      : "text-primary-foreground hover:bg-primary-foreground/10"
-                  }`}
+                  className="px-4 py-3 rounded-xl text-sm font-medium transition-colors text-foreground hover:bg-muted"
                 >
                   {item.label}
                 </a>
               ))}
-              <a
-                href="https://wa.me/5535998119836"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-green text-primary-foreground font-medium rounded-xl mt-2"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Chamar no WhatsApp
-              </a>
             </div>
           </nav>
         )}

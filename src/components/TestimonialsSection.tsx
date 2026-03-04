@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const testimonials = [
   {
@@ -32,11 +33,19 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
+    threshold: 0.1,
+  });
+
   return (
     <section id="depoimentos" className="section-padding bg-background">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 scroll-reveal ${headerVisible ? "is-visible" : ""}`}
+        >
           <span className="inline-block px-4 py-1 bg-accent/20 text-accent-foreground rounded-full text-sm font-medium mb-4">
             Depoimentos
           </span>
@@ -49,12 +58,14 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className={`relative bg-card rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border-t-4 ${testimonial.color} animate-fade-in`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`relative bg-card rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border-t-4 ${testimonial.color} scroll-reveal ${gridVisible ? "is-visible" : ""}`}
+              style={{
+                transitionDelay: gridVisible ? `${index * 100}ms` : "0ms",
+              }}
             >
               {/* Quote Icon */}
               <Quote className="absolute top-4 right-4 w-8 h-8 text-muted/30" />
@@ -62,10 +73,7 @@ const TestimonialsSection = () => {
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 text-accent fill-accent"
-                  />
+                  <Star key={i} className="w-5 h-5 text-accent fill-accent" />
                 ))}
               </div>
 

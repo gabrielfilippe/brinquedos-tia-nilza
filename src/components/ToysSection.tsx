@@ -1,4 +1,5 @@
 import { Star, MessageCircle } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import trampolineImg from "@/assets/camaelastica.jpg";
 import slideImg from "@/assets/tobogaslide.jpeg";
 import ballPitImg from "@/assets/piscinaDeBolinhas.jpeg";
@@ -48,11 +49,19 @@ const toys = [
 ];
 
 const ToysSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
+    threshold: 0.1,
+  });
+
   return (
     <section id="brinquedos" className="section-padding bg-background">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 scroll-reveal ${headerVisible ? "is-visible" : ""}`}
+        >
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Nosso catálogo
           </span>
@@ -66,12 +75,14 @@ const ToysSection = () => {
         </div>
 
         {/* Toys Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {toys.map((toy, index) => (
             <div
               key={toy.id}
-              className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-2 ${toy.color} animate-fade-in flex flex-col`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-2 ${toy.color} scroll-reveal-scale ${gridVisible ? "is-visible" : ""} flex flex-col`}
+              style={{
+                transitionDelay: gridVisible ? `${index * 100}ms` : "0ms",
+              }}
             >
               {/* Popular Badge */}
               {toy.popular && (
