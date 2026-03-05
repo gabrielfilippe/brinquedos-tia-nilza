@@ -1,4 +1,46 @@
-# Welcome to your Lovable project
+# Brinquedos Tia Nilza 🎈
+
+Site de aluguel de brinquedos para festas infantis.
+
+## 🚀 Configuração Rápida
+
+### Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+
+### Passo a passo para configurar o projeto:
+
+```bash
+# 1. Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+
+# 2. Entre na pasta do projeto
+cd brinquedos-tia-nilza
+
+# 3. Instale todas as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento
+npm run dev
+
+# 5. Acesse no navegador
+# O terminal mostrará o endereço (geralmente http://localhost:8080)
+```
+
+### Outros comandos úteis:
+
+```bash
+# Build para produção
+npm run build
+
+# Preview da build de produção
+npm run preview
+
+# Lint do código
+npm run lint
+```
+
+---
 
 ## Project info
 
