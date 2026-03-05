@@ -5,6 +5,7 @@ Site de aluguel de brinquedos para festas infantis.
 ## 🚀 Configuração Rápida
 
 ### Pré-requisitos
+
 - Node.js (versão 18 ou superior)
 - npm ou yarn
 
