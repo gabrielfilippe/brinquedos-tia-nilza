@@ -54,14 +54,10 @@ const AboutSection = () => {
               <span className="text-secondary">segurança</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              A{" "}
-              <strong className="text-foreground">
-                Brinquedos da Tia Nilza
-              </strong>{" "}
-              atua há {yearsSinceStart} anos no mercado, levando diversão,
-              segurança e tranquilidade para pais e responsáveis. Nosso
-              compromisso é garantir momentos inesquecíveis para as crianças,
-              com brinquedos seguros, higienizados e montagem profissional.
+              A <strong className="text-foreground"> Tia Nilza</strong> atua há {yearsSinceStart} anos 
+              no mercado, levando diversão, segurança e tranquilidade para pais e responsáveis. 
+              Nosso compromisso é garantir momentos inesquecíveis para as crianças, com brinquedos 
+              seguros, higienizados e montagem profissional.
             </p>
 
             {/* Features List */}
