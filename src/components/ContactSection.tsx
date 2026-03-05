@@ -1,12 +1,21 @@
 import { MessageCircle, Instagram, MapPin, Clock } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const ContactSection = () => {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollReveal();
+  const { ref: mapRef, isVisible: mapVisible } = useScrollReveal({
+    threshold: 0.2,
+  });
+
   return (
     <section id="contato" className="section-padding bg-muted/50">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="animate-fade-in-left">
+          <div
+            ref={contentRef}
+            className={`scroll-reveal-left ${contentVisible ? "is-visible" : ""}`}
+          >
             <span className="inline-block px-4 py-1 bg-green/10 text-green rounded-full text-sm font-medium mb-4">
               Entre em contato
             </span>
@@ -14,8 +23,8 @@ const ContactSection = () => {
               Fale com a <span className="text-secondary">Tia Nilza</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Entre em contato e faça seu orçamento sem compromisso. Estamos prontos para 
-              fazer da sua festa um momento inesquecível!
+              Entre em contato e faça seu orçamento sem compromisso. Estamos
+              prontos para fazer da sua festa um momento inesquecível!
             </p>
 
             {/* Contact Cards */}
@@ -55,8 +64,12 @@ const ContactSection = () => {
                   <MapPin className="w-6 h-6 text-secondary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Área de Atendimento</p>
-                  <p className="text-muted-foreground">Cabo Verde - MG e região</p>
+                  <p className="font-semibold text-foreground">
+                    Área de Atendimento
+                  </p>
+                  <p className="text-muted-foreground">
+                    Cabo Verde - MG e região
+                  </p>
                 </div>
               </div>
 
@@ -65,15 +78,22 @@ const ContactSection = () => {
                   <Clock className="w-6 h-6 text-accent-foreground" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Horário de Atendimento</p>
-                  <p className="text-muted-foreground">Segunda a Domingo, 8h às 20h</p>
+                  <p className="font-semibold text-foreground">
+                    Horário de Atendimento
+                  </p>
+                  <p className="text-muted-foreground">
+                    Segunda a Domingo, 8h às 20h
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Map/Image Placeholder */}
-          <div className="animate-fade-in-right">
+          <div
+            ref={mapRef}
+            className={`scroll-reveal-right ${mapVisible ? "is-visible" : ""}`}
+          >
             <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-8 text-center">
               <div className="bg-card rounded-2xl p-8 shadow-lg">
                 <div className="w-20 h-20 mx-auto mb-4 bg-green/10 rounded-full flex items-center justify-center">

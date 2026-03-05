@@ -1,9 +1,11 @@
 import { MessageCircle, PartyPopper } from "lucide-react";
 import { getYearsSinceStart } from "@/lib/utils";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const CTASection = () => {
   const yearsSinceStart = getYearsSinceStart();
-  
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.3 });
+
   return (
     <section className="section-padding bg-gradient-to-r from-primary via-secondary to-primary relative overflow-hidden">
       {/* Decorative Elements */}
@@ -14,7 +16,10 @@ const CTASection = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center animate-fade-in">
+        <div
+          ref={ref}
+          className={`text-center scroll-reveal-scale ${isVisible ? "is-visible" : ""}`}
+        >
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-foreground/10 rounded-full mb-6 animate-bounce-gentle">
             <PartyPopper className="w-8 h-8 text-primary-foreground" />
@@ -27,7 +32,8 @@ const CTASection = () => {
 
           {/* Subtitle */}
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Com quem entende do assunto há {yearsSinceStart} anos. Faça seu orçamento agora mesmo, sem compromisso!
+            Com quem entende do assunto há {yearsSinceStart} anos. Faça seu
+            orçamento agora mesmo, sem compromisso!
           </p>
 
           {/* CTA Button */}
@@ -43,7 +49,8 @@ const CTASection = () => {
 
           {/* Trust Badge */}
           <p className="mt-6 text-primary-foreground/60 text-sm">
-            Resposta rápida • Orçamento sem compromisso • Atendimento personalizado
+            Resposta rápida • Orçamento sem compromisso • Atendimento
+            personalizado
           </p>
         </div>
       </div>
