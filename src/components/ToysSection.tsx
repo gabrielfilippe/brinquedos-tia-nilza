@@ -106,7 +106,7 @@ const ToysSection = () => {
         </div>
 
         {/* Toys Carousel */}
-        <div ref={gridRef} className="relative px-12">
+        <div ref={gridRef} className="relative px-4 sm:px-12">
           <Carousel
             setApi={setApi}
             opts={{
