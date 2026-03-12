@@ -55,7 +55,9 @@ const ContactSection = () => {
                 </div>
                 <div className="min-w-0">
                   <p className="font-semibold text-foreground">Instagram</p>
-                  <p className="text-muted-foreground break-words">@brinquedosdatianilza</p>
+                  <p className="text-muted-foreground break-words">
+                    @brinquedosdatianilza
+                  </p>
                 </div>
               </a>
 
