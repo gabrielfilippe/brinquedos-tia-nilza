@@ -14,13 +14,13 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {/* Logo & Description */}
             <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-3 w-full">
                 <img
                   src={logo}
                   alt="Logo Brinquedos da Tia Nilza"
                   className="w-12 h-12 rounded-lg object-contain bg-white/90 p-1"
                 />
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight min-w-0 break-words text-center md:text-left">
                   Brinquedos da <span className="text-accent">Tia Nilza</span>
                 </h3>
               </div>
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="flex justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
               <a
                 href="#sobre"
                 className="text-primary-foreground/60 hover:text-accent transition-colors text-sm"

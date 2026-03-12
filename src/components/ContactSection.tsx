@@ -38,7 +38,7 @@ const ContactSection = () => {
                 <div className="p-3 bg-green/10 rounded-xl group-hover:bg-green group-hover:text-primary-foreground transition-colors">
                   <MessageCircle className="w-6 h-6 text-green group-hover:text-primary-foreground" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold text-foreground">WhatsApp</p>
                   <p className="text-muted-foreground">(35) 99811-9836</p>
                 </div>
@@ -53,9 +53,11 @@ const ContactSection = () => {
                 <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Instagram className="w-6 h-6 text-primary group-hover:text-primary-foreground" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold text-foreground">Instagram</p>
-                  <p className="text-muted-foreground">@brinquedosdatianilza</p>
+                  <p className="text-muted-foreground break-words">
+                    @brinquedosdatianilza
+                  </p>
                 </div>
               </a>
 
@@ -63,11 +65,11 @@ const ContactSection = () => {
                 <div className="p-3 bg-secondary/10 rounded-xl">
                   <MapPin className="w-6 h-6 text-secondary" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold text-foreground">
                     Área de Atendimento
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground break-words">
                     Cabo Verde - MG e região
                   </p>
                 </div>
@@ -77,7 +79,7 @@ const ContactSection = () => {
                 <div className="p-3 bg-accent/20 rounded-xl">
                   <Clock className="w-6 h-6 text-accent-foreground" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold text-foreground">
                     Horário de Atendimento
                   </p>
