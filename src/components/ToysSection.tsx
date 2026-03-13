@@ -246,10 +246,10 @@ const ToysSection = () => {
 
                             {toy.sizeOptions && (
                               <div className="mt-3 rounded-lg bg-background px-3 py-2 border border-border/70">
-                                <p className="text-[11px] sm:text-xs text-muted-foreground mb-1">
-                                  Tamanhos disponíveis
+                                <p className="text-[11px] sm:text-xs text-muted-foreground mb-1 text-center">
+                                  Tamanhos disponíveis:
                                 </p>
-                                <div className="flex flex-wrap gap-2 text-[11px] sm:text-xs">
+                                <div className="flex flex-wrap justify-center gap-2 text-[11px] sm:text-xs">
                                   {toy.sizeOptions.map((option) => (
                                     <span
                                       key={option}
@@ -270,14 +270,14 @@ const ToysSection = () => {
                               }`}
                             >
                               <div className="rounded-lg bg-background px-2 py-1.5 text-center">
-                                <p className="text-muted-foreground">Idade</p>
+                                <p className="text-muted-foreground">Idade:</p>
                                 <p className="font-semibold text-foreground">
                                   {toy.ageRange}
                                 </p>
                               </div>
                               <div className="rounded-lg bg-background px-2 py-1.5 text-center">
                                 <p className="text-muted-foreground">
-                                  Dimensões
+                                  Dimensões:
                                 </p>
                                 <p className="font-semibold text-foreground">
                                   {toy.space}
@@ -287,7 +287,7 @@ const ToysSection = () => {
                               {toy.voltage && (
                                 <div className="rounded-lg bg-background px-2 py-1.5 text-center">
                                   <p className="text-muted-foreground">
-                                    Voltagem
+                                    Voltagem:
                                   </p>
                                   <p className="font-semibold text-foreground">
                                     {toy.voltage}
