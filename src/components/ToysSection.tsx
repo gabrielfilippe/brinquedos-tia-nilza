@@ -69,7 +69,7 @@ const toys: Toy[] = [
     id: 3,
     name: "Piscina de Bolinhas",
     details:
-      "Ambiente ludico e aconchegante para os pequenos brincarem com seguranca. Excelente para criancas menores.",
+      "Ambiente lúdico e aconchegante para os pequenos brincarem com segurança. Excelente para crianças menores.",
     ageRange: "1 a 6 anos",
     space: "2x2m",
     image: ballPitImg,
