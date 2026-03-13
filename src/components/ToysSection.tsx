@@ -21,15 +21,30 @@ import slideImg from "@/assets/tobogaslide.jpeg";
 import ballPitImg from "@/assets/piscinaDeBolinhas.jpeg";
 import bouncyCastleImg from "@/assets/castelinho.jpg";
 
-const toys = [
+type Toy = {
+  id: number;
+  name: string;
+  details: string;
+  ageRange: string;
+  space: string;
+  sizeOptions?: string[];
+  voltage?: string;
+  image: string;
+  quantity: number;
+  popular: boolean;
+  color: string;
+  bgColor: string;
+};
+
+const toys: Toy[] = [
   {
     id: 1,
     name: "Cama Elástica",
     details:
-      "Estrutura reforcada, rede de protecao e lona resistente. Ideal para aniversarios e eventos com criancas cheias de energia.",
+      "Estrutura reforçada, rede de proteção e lona resistente. Ideal para aniversários e eventos com crianças cheias de energia.",
     ageRange: "3 a 10 anos",
-    space: "Aprox. 3x3m",
-    setupTime: "30 min",
+    space: "2 tamanhos disponíveis",
+    sizeOptions: ["Padrão: 3,10m", "Grande: 4,27m"],
     image: trampolineImg,
     quantity: 2,
     popular: true,
@@ -40,10 +55,10 @@ const toys = [
     id: 2,
     name: "Tobogã Inflável",
     details:
-      "Toboga com subida segura e descida divertida. Excelente opcao para manter as criancas entretidas durante toda a festa.",
+      "Tobogã com subida segura e descida divertida. Excelente opção para manter as crianças entretidas durante toda a festa.",
     ageRange: "4 a 10 anos",
-    space: "Aprox. 6x3m",
-    setupTime: "40 min",
+    space: "(A)6.00m (L)3.50m (C)6.50m",
+    voltage: "Motor 127V",
     image: slideImg,
     quantity: 2,
     popular: true,
@@ -56,8 +71,7 @@ const toys = [
     details:
       "Ambiente ludico e aconchegante para os pequenos brincarem com seguranca. Excelente para criancas menores.",
     ageRange: "1 a 6 anos",
-    space: "Aprox. 2x2m",
-    setupTime: "25 min",
+    space: "2x2m",
     image: ballPitImg,
     quantity: 1,
     popular: false,
@@ -68,10 +82,9 @@ const toys = [
     id: 4,
     name: "Castelinho Inflável",
     details:
-      "Inflavel compacto e tematico, ideal para espacos menores sem abrir mao da diversao. Entradas e laterais protegidas.",
+      "Inflável compacto e temático, ideal para espaços menores sem abrir mão da diversão. Entradas e laterais protegidas.",
     ageRange: "2 a 8 anos",
-    space: "Aprox. 4x3m",
-    setupTime: "30 min",
+    space: "(A)2.80m  (L)4.20m  (C)5.00m",
     image: bouncyCastleImg,
     quantity: 1,
     popular: false,
@@ -229,7 +242,30 @@ const ToysSection = () => {
                             <p className="text-sm text-muted-foreground leading-relaxed">
                               {toy.details}
                             </p>
-                            <div className="mt-3 pt-3 border-t border-border/70 grid grid-cols-3 gap-2 text-[11px] sm:text-xs">
+
+                            {toy.sizeOptions && (
+                              <div className="mt-3 rounded-lg bg-background px-3 py-2 border border-border/70">
+                                <p className="text-[11px] sm:text-xs text-muted-foreground mb-1">
+                                  Tamanhos disponíveis
+                                </p>
+                                <div className="flex flex-wrap gap-2 text-[11px] sm:text-xs">
+                                  {toy.sizeOptions.map((option) => (
+                                    <span
+                                      key={option}
+                                      className="inline-flex rounded-full bg-muted px-2.5 py-1 text-foreground font-medium"
+                                    >
+                                      {option}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            <div
+                              className={`mt-3 pt-3 border-t border-border/70 grid gap-2 text-[11px] sm:text-xs ${
+                                toy.voltage ? "grid-cols-3" : "grid-cols-2"
+                              }`}
+                            >
                               <div className="rounded-lg bg-background px-2 py-1.5 text-center">
                                 <p className="text-muted-foreground">Idade</p>
                                 <p className="font-semibold text-foreground">
@@ -237,19 +273,24 @@ const ToysSection = () => {
                                 </p>
                               </div>
                               <div className="rounded-lg bg-background px-2 py-1.5 text-center">
-                                <p className="text-muted-foreground">Espaço</p>
+                                <p className="text-muted-foreground">
+                                  Dimensões
+                                </p>
                                 <p className="font-semibold text-foreground">
                                   {toy.space}
                                 </p>
                               </div>
-                              <div className="rounded-lg bg-background px-2 py-1.5 text-center">
-                                <p className="text-muted-foreground">
-                                  Montagem
-                                </p>
-                                <p className="font-semibold text-foreground">
-                                  {toy.setupTime}
-                                </p>
-                              </div>
+
+                              {toy.voltage && (
+                                <div className="rounded-lg bg-background px-2 py-1.5 text-center">
+                                  <p className="text-muted-foreground">
+                                    Voltagem
+                                  </p>
+                                  <p className="font-semibold text-foreground">
+                                    {toy.voltage}
+                                  </p>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
