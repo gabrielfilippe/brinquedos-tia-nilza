@@ -1,4 +1,10 @@
-import { Star, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Star,
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useState, useEffect } from "react";
 import {
@@ -19,7 +25,11 @@ const toys = [
   {
     id: 1,
     name: "Cama Elástica",
-    description: "Perfeita para pular e gastar energia!",
+    details:
+      "Estrutura reforcada, rede de protecao e lona resistente. Ideal para aniversarios e eventos com criancas cheias de energia.",
+    ageRange: "3 a 10 anos",
+    space: "Aprox. 3x3m",
+    setupTime: "30 min",
     image: trampolineImg,
     quantity: 2,
     popular: true,
@@ -29,7 +39,11 @@ const toys = [
   {
     id: 2,
     name: "Tobogã Inflável",
-    description: "Muita diversão! Sucesso garantido em qualquer festa.",
+    details:
+      "Toboga com subida segura e descida divertida. Excelente opcao para manter as criancas entretidas durante toda a festa.",
+    ageRange: "4 a 10 anos",
+    space: "Aprox. 6x3m",
+    setupTime: "40 min",
     image: slideImg,
     quantity: 2,
     popular: true,
@@ -39,7 +53,11 @@ const toys = [
   {
     id: 3,
     name: "Piscina de Bolinhas",
-    description: "Colorida e super divertida! As crianças adoram.",
+    details:
+      "Ambiente ludico e aconchegante para os pequenos brincarem com seguranca. Excelente para criancas menores.",
+    ageRange: "1 a 6 anos",
+    space: "Aprox. 2x2m",
+    setupTime: "25 min",
     image: ballPitImg,
     quantity: 1,
     popular: false,
@@ -49,7 +67,11 @@ const toys = [
   {
     id: 4,
     name: "Castelinho Inflável",
-    description: "Um castelo de sonhos para as crianças brincarem à vontade!",
+    details:
+      "Inflavel compacto e tematico, ideal para espacos menores sem abrir mao da diversao. Entradas e laterais protegidas.",
+    ageRange: "2 a 8 anos",
+    space: "Aprox. 4x3m",
+    setupTime: "30 min",
     image: bouncyCastleImg,
     quantity: 1,
     popular: false,
@@ -66,6 +88,7 @@ const ToysSection = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [expandedToyId, setExpandedToyId] = useState<number | null>(null);
 
   useEffect(() => {
     if (!api) return;
@@ -125,17 +148,17 @@ const ToysSection = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2 items-start md:-ml-4">
               {toys.map((toy, index) => (
                 <CarouselItem
                   key={toy.id}
-                  className={`pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 scroll-reveal-scale ${gridVisible ? "is-visible" : ""}`}
+                  className={`h-auto pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 scroll-reveal-scale ${gridVisible ? "is-visible" : ""}`}
                   style={{
                     transitionDelay: gridVisible ? `${index * 100}ms` : "0ms",
                   }}
                 >
                   <div
-                    className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-t-4 ${toy.color} flex flex-col h-full`}
+                    className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-t-4 ${toy.color}`}
                   >
                     {/* Popular Badge */}
                     {toy.popular && (
@@ -157,7 +180,7 @@ const ToysSection = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="p-5 flex flex-col flex-grow">
+                    <div className="p-5">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-foreground">
                           {toy.name}
@@ -168,18 +191,69 @@ const ToysSection = () => {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                        {toy.description}
-                      </p>
-                      <a
-                        href="https://wa.me/5535998119836"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-3 bg-green text-primary-foreground font-medium rounded-xl hover:scale-[1.02] transition-transform duration-300 mt-auto"
+                      <button
+                        type="button"
+                        onPointerDownCapture={(e) => e.stopPropagation()}
+                        onTouchStartCapture={(e) => e.stopPropagation()}
+                        onClick={() =>
+                          setExpandedToyId((prev) =>
+                            prev === toy.id ? null : toy.id,
+                          )
+                        }
+                        aria-expanded={expandedToyId === toy.id}
+                        className="inline-flex items-center justify-center gap-2 w-full py-2.5 mb-3 border border-border bg-muted/30 text-foreground font-medium rounded-xl hover:bg-muted transition-colors duration-300"
                       >
-                        <MessageCircle className="w-4 h-4" />
-                        Solicitar orçamento
-                      </a>
+                        {expandedToyId === toy.id
+                          ? "Ocultar descrição"
+                          : "Ver descrição"}
+                        {expandedToyId === toy.id ? (
+                          <ChevronUp className="w-4 h-4" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4" />
+                        )}
+                      </button>
+
+                      <div
+                        className={`grid transition-all duration-300 ease-out ${
+                          expandedToyId === toy.id
+                            ? "grid-rows-[1fr] opacity-100 mb-4"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div
+                            className="p-3 rounded-xl bg-muted/50 border border-border"
+                            onPointerDownCapture={(e) => e.stopPropagation()}
+                            onTouchStartCapture={(e) => e.stopPropagation()}
+                          >
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {toy.details}
+                            </p>
+                            <div className="mt-3 pt-3 border-t border-border/70 grid grid-cols-3 gap-2 text-[11px] sm:text-xs">
+                              <div className="rounded-lg bg-background px-2 py-1.5 text-center">
+                                <p className="text-muted-foreground">Idade</p>
+                                <p className="font-semibold text-foreground">
+                                  {toy.ageRange}
+                                </p>
+                              </div>
+                              <div className="rounded-lg bg-background px-2 py-1.5 text-center">
+                                <p className="text-muted-foreground">Espaço</p>
+                                <p className="font-semibold text-foreground">
+                                  {toy.space}
+                                </p>
+                              </div>
+                              <div className="rounded-lg bg-background px-2 py-1.5 text-center">
+                                <p className="text-muted-foreground">
+                                  Montagem
+                                </p>
+                                <p className="font-semibold text-foreground">
+                                  {toy.setupTime}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>
