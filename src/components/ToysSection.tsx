@@ -85,6 +85,7 @@ const toys: Toy[] = [
       "Inflável compacto e temático, ideal para espaços menores sem abrir mão da diversão. Entradas e laterais protegidas.",
     ageRange: "2 a 8 anos",
     space: "(A)2.80m  (L)4.20m  (C)5.00m",
+    voltage: "Motor 127V",
     image: bouncyCastleImg,
     quantity: 1,
     popular: false,
@@ -263,7 +264,9 @@ const ToysSection = () => {
 
                             <div
                               className={`mt-3 pt-3 border-t border-border/70 grid gap-2 text-[11px] sm:text-xs ${
-                                toy.voltage ? "grid-cols-3" : "grid-cols-2"
+                                toy.voltage
+                                  ? "grid-cols-[0.9fr_1.2fr_0.9fr]"
+                                  : "grid-cols-[0.9fr_1.1fr]"
                               }`}
                             >
                               <div className="rounded-lg bg-background px-2 py-1.5 text-center">
